@@ -4,7 +4,7 @@ use rand::{thread_rng, Rng};
 fn main() {
     // creates an instance of of the type ThreadRng: pub struct ThreadRng { /* private fields */ }
     // the ThreadRng (or rng in our case) instance can be used to call methods like gen
-    let mut rng = thread_rng();
+    let rng = thread_rng();
     // create a random string
     let rand_string: String = rng
         .sample_iter(Alphanumeric)
@@ -16,5 +16,5 @@ fn main() {
         .take(30)
         .map(char::from)
         .collect();
-    println!("{:?}", rand_string);
+    println!("{}", rand_string);
 }
